@@ -1,3 +1,31 @@
 body {
     background-color: beige;
 }
+
+img {
+    width: 280px;
+    height: 350px;
+}
+
+h1 {
+    text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+    color: orange;
+    font-family: cursive;
+}
+
+a {
+    color: orange;
+    border: solid 1px black;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+h4{
+    font-size: small;
+    font-family: monospace;
+}

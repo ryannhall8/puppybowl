@@ -11,15 +11,16 @@ function render(){
     let filtered = players;
     if(id){
         filtered = filtered.filter(function(player){
-            return player.id === id;
+            return player.id === id; 
         });
     }
+
     const html = filtered.map(function(player){
-   // console.log(player);
      return `
         <li>
-        <h5><a href='#${player.id}'>${ player.name }</a></h5>
-        ${ player.breed }
+        <h2><a href='#${player.id}'>${ player.name }</a></h2>
+        <h4>Breed: ${ player.breed } </h4>
+        <img src='${ player.imageUrl }' />
         </li>
         `;
     }).join('');
@@ -32,7 +33,6 @@ async function fetchPlayers(){
        const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/2309-FTB-ET-WEB-AM/players');
        const json = await response.json();
        players = json.data.players;
-       //console.log(json.data.players);
        render();
     }
     catch(error){
@@ -42,4 +42,5 @@ async function fetchPlayers(){
 
 fetchPlayers();
 
+//${ player.breed }
 //<img src='${ player.imageUrl }' />
